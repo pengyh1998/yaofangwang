@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>药房网首页</title>
     <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-3.4.1.js"></script>
+
 </head>
 
 <body>
@@ -55,53 +57,96 @@
         </div>
         <div class="head">
             <div class="container">
-                <div class="logo">
-                    <a href="" title="药房网商城(网上药店) ">
-                        <img src="images/logo.jpg" alt="药房网商城是专业网上药店(网上药房),经国家药监局认证合法医药网，药品网购就到药房网商城!">
-                    </a>
-                </div>
+                <div class="logo"><a href="" title="药房网商城(网上药店) "><img src="images/logo.jpg"
+                            alt="药房网商城是专业网上药店(网上药房),经国家药监局认证合法医药网，药品网购就到药房网商城!"></a></div>
                 <div class="search">
                     <form method="get" id="search" class="search_input">
                         <div class="opt_list"><a href="" class="sp">商品</a><span></span>
                             <div class="show"><a href="" class="cur">商家</a><a href="">厂家</a><a href="">医院</a></div>
-                        </div>
-                        <input type="text" placeholder="请输入批准文号、通用名、商品名、症状" value="" maxlength="60" autocomplete="off"
-                            id="keyword" class="txt">
-                        <button type="button" class="submit" id="btn_submit">搜索</button>
+                        </div><input type="text" placeholder="请输入批准文号、通用名、商品名、症状" value="" maxlength="60"
+                            autocomplete="off" id="keyword" class="txt"><button type="button" class="submit"
+                            id="btn_submit">搜索</button>
                     </form>
                     <ul class="hot_search">
-                        <li class="noborder highlight">
-                            <a href="" title="补血">补血</a>
-                        </li>
-                        <li>
-                            <a href="" title="999">999</a>
-                        </li>
-                        <li>
-                            <a href="" title="片仔癀">片仔癀</a>
-                        </li>
-                        <li>
-                            <a href="" title="妈富隆">妈富隆</a>
-                        </li>
-                        <li class="highlight">
-                            <a href="" title="阿胶">阿胶</a>
-                        </li>
-                        <li>
-                            <a href="" title="金戈">金戈</a>
-                        </li>
-                        <li>
-                            <a href="" title="汤臣倍健">汤臣倍健</a>
-                        </li>
-                        <li class="highlight">
-                            <a href="" title="领20元新人券">领20元新人券</a>
-                        </li>
+                        <li class="noborder highlight"><a href="" title="补血">补血</a></li>
+                        <li><a href="" title="999">999</a></li>
+                        <li><a href="" title="片仔癀">片仔癀</a></li>
+                        <li><a href="" title="妈富隆">妈富隆</a></li>
+                        <li class="highlight"><a href="" title="阿胶">阿胶</a></li>
+                        <li><a href="" title="金戈">金戈</a></li>
+                        <li><a href="" title="汤臣倍健">汤臣倍健</a></li>
+                        <li class="highlight"><a href="" title="领20元新人券">领20元新人券</a></li>
                     </ul>
                 </div>
-                <div class="promise">
-                    <a href="" title="第三方药品交易服务平台,一站多店式药品订购体验,严格审核正规药房供货"></a>
+                <div class="promise"><a href="" title="第三方药品交易服务平台,一站多店式药品订购体验,严格审核正规药房供货"></a></div>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="container">
+                <ul class="mainnav">
+                    <li class="category"><a href="">全部商品分类</a></li>
+                    <li class="home"><a id="home" href="">首页</a></li>
+                    <li><a id="yao" href="" title="药品超市">药品超市</a></li>
+                    <li><a id="yaodian" href="" title="药房联盟">药房联盟</a></li>
+                    <li><a id="yiyuan" href="" title="医院大全">医院大全</a></li>
+                    <li><a id="news" href="" title="医药资讯">医药资讯</a></li>
+                    <li><a id="ask" href="" title="用药问答">用药问答</a></li>
+                    <li><a id="joinin" href="" title="商家入驻">商家入驻</a></li>
+                </ul>
+                <div class="catlist">
+                    <ul class="maincat">
+                        <li class="zxyp" id="zxyp1">
+                            <h2><a href="" title="中西药品">中西药品</a></h2>
+                            <div class="sub"><a href="" title="肠胃用药">肠胃用药</a><a href="" title="感冒药">感冒药</a><a href=""
+                                    title="心脑血管" class="n">心脑血管</a></div><i></i>
+                        </li>
+                        <li class="ylqx" id="ylqx1">
+                            <h2><a href="" title="医疗器械">医疗器械</a></h2>
+                            <div class="sub"><a href="" title="血压计">血压计</a><a href="" title="血糖仪">血糖仪</a><a href=""
+                                    title="创可贴" class="n">创可贴</a></div><i></i>
+                        </li>
+                        <li class="ysbj" id="ysbj1">
+                            <h2><a href="" title="养生保健">养生保健</a></h2>
+                            <div class="sub"><a href="" title="滋补药酒">滋补药酒</a><a href="" title="补钙">补钙</a><a href=""
+                                    title="补气养血" class="n">补气养血</a></div><i></i>
+                        </li>
+                        <li class="jsyp" id="jsyp1">
+                            <h2><a href="" title="计生用品">计生用品</a></h2>
+                            <div class="sub"><a href="" title="避孕套">避孕套</a><a href="" title="避孕药">避孕药</a><a href=""
+                                    title="验孕检查" class="n">验孕检查</a></div><i></i>
+                        </li>
+                        <li class="zyyp" id="zyyp1">
+                            <h2><a href="" title="中药饮片">中药饮片</a></h2>
+                            <div class="sub"><a href="" title="西洋参">西洋参</a><a href="" title="三七">三七</a><a href=""
+                                    title="灵芝孢子粉" class="n">灵芝孢子粉</a></div><i></i>
+                        </li>
+                        <li class="mrhf nb" id="mrhf1">
+                            <h2><a href="" title="美容护肤">美容护肤</a></h2>
+                            <div class="sub"><a href="" title="祛痘">祛痘</a><a href="" title="祛斑">祛斑</a><a href=""
+                                    title="疤痕修复" class="n">疤痕修复</a></div><i></i>
+                        </li>
+                    </ul>
+                    <div class="subcat"></div>
+                    <div class="subcat"></div>
+                    <div class="subcat"></div>
+                    <div class="subcat"></div>
+                    <div class="subcat"></div>
+                    <div class="subcat"></div>
                 </div>
             </div>
         </div>
+        <div class="banner">
+            <div class="container">
+                <div class="sjrz">
+                    <img src="images/byzq.png" alt="">
+                    <img src="images/xrzx.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
     </div>
+
 </body>
+<script src="js/banner.js"></script>
 
 </html>
