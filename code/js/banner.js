@@ -24,24 +24,23 @@ $(function () {
         createHTML() {
             let sliderBox = document.createElement("ul");
             sliderBox.className = "slider-box";
-
             let html = this.data.map((ele) => {
                 return `<li class="slider-box-item"><img src=${ele}></li>`
             }).join("");
             sliderBox.innerHTML = html;
-
             let sliderControl = document.createElement("div");
             sliderControl.className = "slider-control";
             sliderControl.innerHTML = `
-                     <span class="prev"><</span>
-                     <span class="next">></span>
-                `
+             <span class="prev"></span>
+             <span class="next"></span>
+        `
             let sliderNav = document.createElement("ol");
             sliderNav.className = "slider-nav";
             let html2 = this.data.map((ele, index) => {
                 return `<li class="slider-nav-item">${index + 1}</li>`
             }).join("");
             sliderNav.innerHTML = html2;
+
 
             let slider = document.createElement("div");
             slider.className = "slider"
@@ -93,7 +92,7 @@ $(function () {
         }
         addEventHandle() {
             /* 获取标签 */
-            this.sliderControl.onclionck = (e) => {
+            this.sliderControl.onclick = (e) => {
                 if (e.target.className == "prev") {
                     this.prev();
                 } else if (e.target.className == "next") {
@@ -106,6 +105,19 @@ $(function () {
                 ele.className = "slider-nav-item"
             })
             this.sliderNav.children[index].className = "slider-nav-item active";
+            if (index == 0) {
+                $(".banner").css("background-color", "#F53445");
+            } else if (index == 1) {
+                $(".banner").css("background-color", "#83DAB7");
+            } else if (index == 2) {
+                $(".banner").css("background-color", "#C5DFF6");
+            } else if (index == 3) {
+                $(".banner").css("background-color", "#5C8FE1");
+            } else if (index == 4) {
+                $(".banner").css("background-color", "#FE4377");
+            } else if (index == 5) {
+                $(".banner").css("background-color", "#FBFBFB");
+            }
         }
         addMouseHandle() {
             /* 鼠标移入的时候 */
@@ -134,9 +146,9 @@ $(function () {
         "images/banner-xinren.png",
         "images/banner-baoyou.jpg",
         "images/banner-zhuanxiang.jpg",
+        "images/banner-app.png",
         "images/banner-quan.png",
         "images/banner-gg.jpg",
-
     ]
     var banner = new BannerManager(arr);
     banner.init();
