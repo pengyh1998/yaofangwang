@@ -893,21 +893,25 @@ a {
 }
 
 #yfw .mitem .title .snavs li {
-  float: right;
-  padding: 2px 12px;
   margin-top: 15px;
   font-size: 14px;
+  height: 25px;
+  float: right;
 }
 
 #yfw .mitem .title .snavs li a {
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  padding: 0 10px;
   color: #000;
 }
 
-#yfw .mitem .title .snavs li:hover {
+#yfw .mitem .title .snavs li:nth-child(7) a {
   background-color: #0CB95F;
 }
 
-#yfw .mitem .title .snavs li:hover a {
+#yfw .mitem .title .snavs li:nth-child(7) a {
   color: #fff;
 }
 
@@ -924,7 +928,6 @@ a {
 
 #yfw .mitem .content .con-left .slides {
   height: 360px;
-  background-color: #0CB95F;
 }
 
 #yfw .mitem .content .con-left .pp {
@@ -963,12 +966,17 @@ a {
   width: 890px;
   height: 100%;
   float: left;
+  position: relative;
 }
 
 #yfw .mitem .content .con-right ul {
   height: 100%;
   border: 1px solid #ccc;
   border-left: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
 }
 
 #yfw .mitem .content .con-right ul li {
@@ -1049,6 +1057,10 @@ a {
   border-right: none;
 }
 
+#yfw .mitem .content .con-right ul:nth-child(1) {
+  display: block;
+}
+
 #yfw .elevator {
   width: 42px;
   height: 475px;
@@ -1068,6 +1080,10 @@ a {
 }
 
 #yfw .elevator li a {
+  display: block;
+  width: 42px;
+  text-align: center;
+  padding: 21px 0;
   color: #999;
   font-size: 14px;
 }
@@ -1077,11 +1093,8 @@ a {
   width: 40px;
 }
 
-#yfw .elevator li:nth-child(1) {
+#yfw .elevator li .active {
   background-color: #0CB95F;
-}
-
-#yfw .elevator li:nth-child(1) a {
   color: #fff;
 }
 
@@ -1093,6 +1106,90 @@ a {
   color: #fff;
 }
 
-#yfw .elevator .last {
+#yfw .elevator .li6 {
   border-bottom: none;
+}
+
+#yfw .hmkg {
+  width: 1190px;
+  margin: 0 auto;
+}
+
+#yfw .hmkg .title {
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+
+#yfw .hmkg .title .sp2 {
+  display: inline-block;
+  font-size: 20px;
+  position: relative;
+}
+
+#yfw .hmkg .title .sp1 {
+  width: 60px;
+  height: 1px;
+  background-color: #999;
+  position: absolute;
+  top: 20px;
+  left: -70px;
+}
+
+#yfw .hmkg .title .sp3 {
+  width: 60px;
+  height: 1px;
+  background-color: #999;
+  position: absolute;
+  top: 20px;
+  left: 90px;
+}
+
+#yfw .hmkg .prod {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+#yfw .hmkg .prod li {
+  width: 230px;
+  height: 300px;
+  border: 1px solid #ccc;
+  margin-right: 7px;
+  margin-bottom: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#yfw .hmkg .prod li img {
+  width: 170px;
+  height: 170px;
+  margin-top: 20px;
+}
+
+#yfw .hmkg .prod li a {
+  display: block;
+  margin-top: 20px;
+}
+
+#yfw .hmkg .prod li span {
+  margin-top: 10px;
+  color: #EF0D15;
+}
+
+#yfw .hmkg .prod li:nth-child(5n) {
+  margin-right: 0;
+}
+
+#yfw .had {
+  width: 1190px;
+  height: 110px;
+  margin: 0 auto;
+}
+
+#yfw .had img {
+  width: 100%;
+  height: 100%;
 }

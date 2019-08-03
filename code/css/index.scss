@@ -904,21 +904,25 @@ a {
                 float: right;
 
                 li {
-                    float: right;
-                    padding: 2px 12px;
                     margin-top: 15px;
                     font-size: 14px;
+                    height: 25px;
+                    float: right;
 
                     a {
+                        display: inline-block;
+                        height: 25px;
+                        line-height: 25px;
+                        padding: 0 10px;
                         color: #000;
                     }
                 }
 
-                li:hover {
+                li:nth-child(7) a {
                     background-color: #0CB95F;
                 }
 
-                li:hover a {
+                li:nth-child(7) a {
                     color: #fff;
                 }
             }
@@ -935,7 +939,6 @@ a {
 
                 .slides {
                     height: 360px;
-                    background-color: #0CB95F;
                 }
 
                 .pp {
@@ -977,11 +980,16 @@ a {
                 width: 890px;
                 height: 100%;
                 float: left;
+                position: relative;
 
                 ul {
                     height: 100%;
                     border: 1px solid #ccc;
                     border-left: none;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: none;
 
                     li {
                         width: 221px;
@@ -1063,6 +1071,10 @@ a {
                         border-right: none;
                     }
                 }
+
+                ul:nth-child(1) {
+                    display: block;
+                }
             }
         }
     }
@@ -1084,6 +1096,10 @@ a {
             border-bottom: 1px solid #ccc;
 
             a {
+                display: block;
+                width: 42px;
+                text-align: center;
+                padding: 21px 0;
                 color: #999;
                 font-size: 14px;
 
@@ -1091,16 +1107,16 @@ a {
                     display: block;
                     width: 40px;
                 }
+
+
+            }
+
+            .active {
+                background-color: #0CB95F;
+                color: #fff;
             }
         }
 
-        li:nth-child(1) {
-            background-color: #0CB95F;
-        }
-
-        li:nth-child(1) a {
-            color: #fff;
-        }
 
         li:hover {
             background-color: #0CB95F;
@@ -1111,8 +1127,94 @@ a {
             color: #fff;
         }
 
-        .last {
+        .li6 {
             border-bottom: none;
+        }
+    }
+
+    .hmkg {
+        width: 1190px;
+        margin: 0 auto;
+
+        .title {
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+
+
+            .sp2 {
+                display: inline-block;
+                font-size: 20px;
+                position: relative;
+            }
+
+            .sp1 {
+                width: 60px;
+                height: 1px;
+                background-color: #999;
+                position: absolute;
+                top: 20px;
+                left: -70px;
+
+            }
+
+            .sp3 {
+                width: 60px;
+                height: 1px;
+                background-color: #999;
+                position: absolute;
+                top: 20px;
+                left: 90px;
+            }
+        }
+
+        .prod {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+
+            li {
+                width: 230px;
+                height: 300px;
+                border: 1px solid #ccc;
+                margin-right: 7px;
+                margin-bottom: 7px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                    width: 170px;
+                    height: 170px;
+                    margin-top: 20px;
+                }
+
+                a {
+                    display: block;
+                    margin-top: 20px;
+                }
+
+                span {
+                    margin-top: 10px;
+                    color: #EF0D15;
+                }
+            }
+
+            li:nth-child(5n) {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .had {
+        width: 1190px;
+        height: 110px;
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+            height: 100%;
         }
     }
 }
