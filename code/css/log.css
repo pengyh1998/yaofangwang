@@ -276,13 +276,14 @@ li {
   background-color: #fff;
   margin-top: 55px;
   float: right;
-  padding: 0 45px;
+  padding: 10px 45px;
   box-sizing: border-box;
 }
 
 #log .login .container .cont .form-tab {
   width: 320px;
   height: 54px;
+  position: relative;
 }
 
 #log .login .container .cont .form-tab .tab-item {
@@ -290,8 +291,88 @@ li {
   height: 54px;
   line-height: 54px;
   font-size: 20px;
-  color: #0CB95F;
+  color: #99A5C2;
   margin-right: 1%;
   float: left;
   text-align: center;
+}
+
+#log .login .container .cont .form-tab .bor-btt {
+  color: #0CB95F;
+  border-bottom: 4px solid #0CB95F;
+}
+
+#log .login .container .cont .form-tab .tab-line {
+  width: 1px;
+  height: 18px;
+  position: absolute;
+  background-color: #99A5C2;
+  left: 48%;
+  top: 19px;
+}
+
+#log .login .container .cont .form {
+  width: 320px;
+  height: 360px;
+  margin-top: 10px;
+}
+
+#log .login .container .cont .form .item {
+  height: 50px;
+  line-height: 50px;
+}
+
+#log .login .container .cont .form .item .r {
+  float: right;
+  font-size: 13px;
+}
+
+#log .login .container .cont .form .inp {
+  width: 320px;
+  height: 50px;
+  margin-bottom: 5px;
+}
+
+#log .login .container .cont .form .inp .input_big {
+  display: block;
+  padding-left: 35px;
+  width: 320px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  color: #333;
+  font-size: 14px;
+  line-height: 40px;
+}
+
+#log .login .container .cont .form .jizhu {
+  height: 50px;
+  font-size: 14px;
+}
+
+#log .login .container .cont .form .jizhu .ckdiv {
+  float: left;
+}
+
+#log .login .container .cont .form .jizhu a {
+  float: right;
+}
+
+#log .login .container .cont .form .dl {
+  height: 50px;
+  background-color: #0CB95F;
+  text-align: center;
+  line-height: 50px;
+}
+
+#log .login .container .cont .form .dl a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#log .login .container .cont .form .qita {
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  margin-top: 10px;
 }
