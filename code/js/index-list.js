@@ -25,4 +25,5 @@ $(function () {
         let a = new ceartList(res);
         a.init();
     });
+
 });

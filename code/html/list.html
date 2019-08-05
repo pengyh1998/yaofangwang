@@ -3,27 +3,51 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>列表</title>
+    <link rel="stylesheet" href="../css/quote.css">
     <link rel="stylesheet" href="../css/list.css">
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/list.js"></script>
+    <script src="../js/quote.js"></script>
 </head>
 
 <body>
     <div id="liebiao">
-        <ul>
-            <li>
+        <div class="header"></div>
+        <div class="nav">
+            <div class="container">
+                <ul class="mainnav">
+                    <li class="category"><a href="">全部商品分类</a></li>
+                    <li class="home"><a id="home" href="../index.html">首页</a></li>
+                    <li><a id="yao" href="" title="药品超市">药品超市</a></li>
+                    <li><a id="yaodian" href="" title="药房联盟">药房联盟</a></li>
+                    <li><a id="yiyuan" href="" title="医院大全">医院大全</a></li>
+                    <li><a id="news" href="" title="医药资讯">医药资讯</a></li>
+                    <li><a id="ask" href="" title="用药问答">用药问答</a></li>
+                    <li><a id="joinin" href="" title="商家入驻">商家入驻</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="nav">
+            <li>默认排序</li>
+            <li>售价排序(从高到低)</li>
+            <li>售价排序(从低到高)</li>
+        </div>
+        <ul class="goods">
+            <!-- <li>
                 <img src="../images/photo1.jpg" alt="">
                 <p class="price">￥7.50</p>
-                <a href="">马应龙 马应龙麝香痔疮膏</a>
+                <a href="" class="name">马应龙 马应龙麝香痔疮膏</a>
                 <p class="guig">规格：10g/支</p>
                 <p class="jix">剂型：软膏剂</p>
                 <p class="pz">批准文号：</p>
-            </li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
+                <p class="acount">共<span>233</span>个商家有售<a href="" class="sq">查看详情</a></p>
+                <div class="sc">生产厂家：华润三九医药股份有限公司</div>
+            </li> -->
+
         </ul>
+        <div id="page" class="page"></div>
+        <div class="footer"></div>
     </div>
 </body>
 

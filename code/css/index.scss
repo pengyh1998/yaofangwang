@@ -623,6 +623,10 @@ a {
                     }
                 }
 
+                li:hover {
+                    background-color: #F3F3F3;
+                }
+
                 li:nth-child(1) i {
                     background-position: -132px -154px;
                 }
@@ -650,6 +654,68 @@ a {
                 li:last-child {
                     border-bottom: none;
                 }
+            }
+
+            .subcat {
+                width: 780px;
+                height: 390px;
+                position: absolute;
+                left: 230px;
+                top: 50px;
+                padding: 0 20px;
+                box-sizing: border-box;
+                background-color: #F3F3F3;
+                z-index: 100;
+                display: none;
+
+                ul {
+                    width: 520px;
+                    height: 100%;
+
+                    li {
+                        overflow: hidden;
+                        border-bottom: 1px solid #ccc;
+                        padding: 8px 0;
+                        padding-left: 100px;
+                        box-sizing: border-box;
+                        position: relative;
+
+
+                        .title {
+                            height: 20px;
+                            line-height: 20px;
+                            text-align: center;
+                            position: absolute;
+                            padding: 0 5px;
+                            top: 20%;
+
+                            font-size: 14px;
+                            left: 0;
+                            color: #fff;
+                            background-color: #0CB95F;
+                        }
+
+                        .title:hover {
+                            color: #fff;
+                        }
+
+                        a {
+                            color: #444A50;
+                            font-size: 13px;
+                            margin-right: 15px;
+                        }
+
+                        a:hover {
+                            color: #0CB95F;
+                            text-decoration: underline;
+                        }
+
+                    }
+                }
+            }
+
+            .active {
+                display: block;
             }
         }
     }
@@ -1190,9 +1256,21 @@ a {
                     margin-top: 20px;
                 }
 
+                img:hover {
+                    transform: translateX(-10px);
+                    transition: all 1s;
+                }
+
                 a {
                     display: block;
                     margin-top: 20px;
+                    color: #333;
+
+                }
+
+                a:hover {
+                    color: #0CB95F;
+                    text-decoration: underline;
                 }
 
                 span {
@@ -1211,10 +1289,149 @@ a {
         width: 1190px;
         height: 110px;
         margin: 0 auto;
+        margin-top: 50px;
 
         img {
             width: 100%;
             height: 100%;
+        }
+    }
+
+    .footer {
+        width: 100%;
+        height: 500px;
+        margin-top: 20px;
+
+        .navigation {
+            width: 100%;
+            height: 190px;
+            background-color: #F4F4F4;
+
+            .container {
+                width: 1190px;
+                height: 150px;
+                margin: 20px auto;
+                padding: 30px 20px;
+
+                dl {
+                    width: 140px;
+                    float: left;
+
+                    dt {}
+
+                    dd {
+                        color: #6A6A6A;
+                        margin-top: 10px;
+
+                        a {
+                            display: block;
+                            line-height: 24px;
+                            font-size: 14px;
+                            color: #888888;
+                        }
+
+                        a:hover {
+                            color: #0CB95F;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                .mr20,
+                .last {
+                    text-align: center;
+
+                    dd {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        .copyright {
+            width: 100%;
+            height: 260px;
+            background-color: #444A50;
+
+            .container {
+                width: 1190px;
+                height: 290px;
+                margin: 0 auto;
+                padding-top: 30px;
+
+                p {
+                    font-size: 14px;
+                    color: #959aa0;
+                    margin-bottom: 10px;
+
+                    a {
+
+                        color: #DEE5EA;
+                        padding: 5px 10px;
+                        line-height: 20px;
+                        text-align: left;
+                    }
+
+                    a:hover {
+                        text-decoration: underline;
+                    }
+
+                    a:nth-child(1) {
+                        padding-left: 0;
+                    }
+                }
+
+                .cert {
+                    width: 100%;
+                    height: 40px;
+                    margin-top: 20px;
+
+                    span {
+                        width: 100px;
+                        height: 40px;
+                        line-height: 40px;
+                        float: left;
+                        margin-right: 10px;
+                        background: url(https://c1.yaofangwang.net/common/images/icon_rz.gif) no-repeat;
+                    }
+
+                    span:nth-child(2) {
+                        background-position: 0 -40px;
+                    }
+
+                    span:nth-child(3) {
+                        background-position: 0 -80px;
+                    }
+
+                    span:nth-child(4) {
+                        background-position: 0 -120px;
+                    }
+
+                    span:nth-child(5) {
+                        background-position: 0 -160px;
+                    }
+
+                    span:nth-child(6) {
+                        background-position: 0 -200px;
+                    }
+
+                    span:nth-child(7) {
+                        background-position: 0 -240px;
+                    }
+
+                    span:nth-child(8) {
+                        background-position: 0 -280px;
+                    }
+
+                    span:nth-child(9) {
+                        background-position: 0 -320px;
+                    }
+                }
+
+                .font {
+                    margin-top: 10px;
+                }
+            }
         }
     }
 }

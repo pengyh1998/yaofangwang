@@ -56,6 +56,7 @@ $(function () {
             });
 
             this.loucengTab();
+            this.Tab();
 
         }
         loucengTab() {
@@ -137,7 +138,22 @@ $(function () {
                 }
             });
         }
+        Tab() {
+            $(".maincat").on("mouseenter", "li", function () {
+                var index = $(this).index();
+                /* (1) 设置当前标签的选中状态 */
+                $(".subcat").eq(index).addClass("active").siblings().removeClass("active");
+                /* (2) 发送网络更新页面 */
+            })
+            $(".nav .container").mouseleave(function () {
+                console.log("ddd");
 
+                // var index = $(this).index();
+                /* (1) 设置当前标签的选中状态 */
+                $(".subcat").removeClass("active");
+            })
+
+        }
     }
     (new YaoFangWang).sor();
 
