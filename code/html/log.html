@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>登录</title>
     <link rel="stylesheet" href="../css/log.css">
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/log.js"></script>
 </head>
 
 <body>
@@ -53,26 +55,28 @@
                 <div class="cont">
                     <div class="form-tab">
                         <div class="tab-item bor-btt">账号登录</div>
-                        <span class="tab-line"></span>
                         <div class="tab-item">快捷登录</div>
+                        <span class="tab-line"></span>
                     </div>
-                    <div class="form">
+                    <div class="form active dldiv">
                         <div class="item">
                             <span>欢迎登录药房网商城</span>
                             <span class="r">没有账号？
                                 <a href="./register.html">立即注册</a>
                             </span>
                         </div>
-                        <div class="inp user">
+                        <div class="inp username">
                             <input type="text" autocomplete="off" placeholder="用户名 / 已验证邮箱或手机" class="input_big"
                                 id="txt_AccountName" maxlength="128" value="">
                             <i class="user"></i>
                         </div>
+                        <span class="usna"></span>
                         <div class="inp pass">
                             <input type="text" autocomplete="off" placeholder="登录密码" class="input_big"
                                 id="txt_AccountName" maxlength="128" value="">
-                            <i class="user"></i>
+                            <i class="pass"></i>
                         </div>
+                        <span class="pwd"></span>
                         <div class="jizhu">
                             <div class="ckdiv">
                                 <input type="checkbox">
@@ -80,12 +84,86 @@
                             </div>
                             <a class="r f" href="">忘记密码？</a>
                         </div>
+                        <span class="point"></span>
                         <div class="dl">
-                            <a id="btn_Submit" class="btn2 b2" href="javascript:;">立即登录</a>
+                            <a id="btn_Submit" class="btn2 b2" href="../index.html">立即登录</a>
                         </div>
                         <div class="qita">使用其它方式登录：</div>
+                        <div class="other">
+                            <a class="qq" href="/vender/jump?type=qq"></a>
+                            <a class="weixin" href="/vender/jump?type=weixin"></a>
+                            <a class="alipay" href="/vender/jump?type=alipay"></a>
+                            <a class="weibo" href="/vender/jump?type=sina"></a>
+                        </div>
+                    </div>
+                    <div class="kuaijie dldiv">
+                        <div class="item">
+                            <span>欢迎登录药房网商城</span>
+                            <span class="r">没有账号？
+                                <a href="./register.html">立即注册</a>
+                            </span>
+                        </div>
+                        <div class="inp">
+                            <input type="tel" autocomplete="off" placeholder="请输入手机号" class="input_big"
+                                id="txt_AccountName" maxlength="128" value="">
+                        </div>
+                        <span class="tel"></span>
+                        <div class="inp yanzheng">
+                            <input type="text" placeholder="请输入图片验证码" class="input_big" id="txt_AccountName"
+                                maxlength="4" value="">
+                            <div class="pht"></div>
+                        </div>
+                        <span class="tuxing"></span>
+                        <div class="duanxin">
+                            <input type="text" placeholder="请输入短信验证码" maxlength="6">
+                            <a class="r" href="">获取短信验证码</a>
+                        </div>
+                        <span class="point"></span>
+                        <div class="dl">
+                            <a id="btn_Submit" class="btn2 b2" href="../index.html">立即登录</a>
+                        </div>
+                        <div class="qita">使用其它方式登录：</div>
+                        <div class="other">
+                            <a class="qq" href="/vender/jump?type=qq"></a>
+                            <a class="weixin" href="/vender/jump?type=weixin"></a>
+                            <a class="alipay" href="/vender/jump?type=alipay"></a>
+                            <a class="weibo" href="/vender/jump?type=sina"></a>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <p>
+                    <a class="first" href="">关于我们</a>
+                    <a href="">资质证书</a> |
+                    <a href="">商家入驻</a> |
+                    <a href="">联系我们</a> |
+                    <a href="">工作机会</a> |
+                    <a href="">帮助中心</a> |
+                    <a href="">法律声明</a> |
+                    <a href="">网站地图</a> |
+                    <a href="">友情链接</a> |
+                    <a href="">在售商品</a> |
+                    <a href="">下架商品</a> |
+                    <a href="">商品索引</a> |
+                    <a href="">商品分类</a> |
+                    <a href="">热门搜索</a>
+                </p>
+                <p class="zz clearfix">
+                    <span>互联网药品交易服务资格证编号:
+                        <a href="">国A20110001</a>
+                    </span>
+                    <span>互联网药品信息服务资格证编号:<a href="">(沪)-经营性-2012-0003</a></span>
+                    <span><a target="_blank" href="http://www.beian.miit.gov.cn"
+                            rel="nofollow">ICP备案号：沪ICP备07012885号</a></span>
+                    <span class="gaba"><img src="//c1.yaofangwang.net/common/images/gaba.png"><a target="_blank"
+                            href="//www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011502002155"
+                            rel="nofollow">沪公网安备 31011502002155号</a></span>
+                </p>
+                <p class="copy">©2007-2019&nbsp;&nbsp;药房网商城版权所有&nbsp;&nbsp;上海伊邦医药信息科技有限公司</p>
+                <p>本网站用字经北京北大方正电子有限公司授权许可</p>
             </div>
         </div>
     </div>

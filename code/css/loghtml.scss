@@ -1,0 +1,280 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.reg {
+    width: 100%;
+    height: 100%;
+
+    .head-top {
+        height: 40px;
+        background-color: #F4F4F4;
+        border-bottom: 1px solid #E5E5E5;
+
+        .container {
+            width: 990px;
+            height: 100%;
+            margin: auto;
+
+            .ul-left {
+                width: 790px;
+                height: 100%;
+                float: left;
+
+                li {
+                    float: left;
+                    height: 40px;
+                    font-size: 13px;
+                    line-height: 40px;
+                    display: flex;
+                    margin-left: 20px;
+
+                    span {
+                        width: 20px;
+                        height: 20px;
+                        background: url(../images/icons.png) no-repeat -3px -4px;
+                        margin-top: 10px;
+                    }
+                }
+
+                .weixin {
+                    position: relative;
+                }
+
+                .weixin .wxbig {
+                    position: absolute;
+                    padding: 10px;
+                    top: 40px;
+                    left: -80px;
+                    border: 1px solid #F4F4F4;
+                    border-top: none;
+                    display: none;
+                    background-color: #fff;
+                    z-index: 9;
+
+                    .pic {
+                        width: 258px;
+                        height: 258px;
+                        background: url(../images/icon_wx_big.jpg) no-repeat;
+                    }
+
+                    p {
+                        text-align: center;
+                    }
+                }
+
+                .weixin span {
+                    background-position: -50px -4px;
+                }
+
+                .weixin:hover .wxbig {
+                    display: block;
+                }
+
+                .app {
+                    position: relative;
+                }
+
+                .app .appbig {
+                    position: absolute;
+                    padding: 10px;
+                    top: 40px;
+                    left: -80px;
+                    border: 1px solid #F4F4F4;
+                    background-color: #fff;
+                    border-top: none;
+                    display: none;
+                    z-index: 9;
+
+                    .pic {
+                        width: 258px;
+                        height: 258px;
+                        background: url(../images/icon_app_big.png) no-repeat;
+                    }
+
+                    p {
+                        text-align: center;
+                    }
+                }
+
+                .app:hover .appbig {
+                    display: block;
+                }
+
+                .app span {
+                    background-position: -68px -4px;
+                }
+
+                a {
+                    height: 40px;
+                    color: #000;
+                }
+
+                a:hover {
+                    color: #0CB95F;
+                    text-decoration: underline;
+                }
+
+                s {
+                    width: 1px;
+                    height: 14px;
+                    background-color: #ccc;
+                    margin-top: 13px;
+                    margin-left: 10px;
+                }
+            }
+
+            .ul-right {
+                width: 200px;
+                height: 40px;
+                float: right;
+                display: flex;
+
+                li {
+                    font-size: 13px;
+                    margin-right: 15px;
+                    line-height: 40px;
+
+                    a {
+                        color: #000;
+                        text-decoration: none;
+                    }
+
+                    a:hover {
+                        color: #0CB95F;
+                        text-decoration: underline;
+                    }
+                }
+
+                .daohang {
+                    position: relative;
+                    width: 70px;
+                    height: 40px;
+                    margin-left: 10px;
+                    padding: 0 5px;
+                    border-left: 1px solid #F4F4F4;
+                    border-right: 1px solid #F4F4F4;
+
+                    span {
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        top: 5px;
+                        right: 3px;
+                        background: url(../images/icons.png) no-repeat -120px 5px;
+                    }
+
+                    .other {
+                        position: absolute;
+                        top: 40px;
+                        right: -1px;
+                        width: 450px;
+                        padding: 10px;
+                        line-height: 26px;
+                        border: 1px solid #ccc;
+                        background-color: #fff;
+                        display: none;
+                        z-index: 9;
+
+                        .item {
+                            float: left;
+                            width: 210px;
+
+                            a {
+                                padding-right: 10px;
+                            }
+
+                            a:hover {
+                                color: #0CB95F;
+                            }
+
+                            .h1 {
+                                color: #0CB95F;
+                            }
+                        }
+
+                        .item:nth-child(1) {
+                            margin-right: 10px;
+                            border-right: 1px solid #ccc;
+                            padding-right: 10px;
+                        }
+                    }
+                }
+
+                .daohang:hover {
+                    background-color: #fff;
+                    border-left: 1px solid #ccc;
+                    border-right: 1px solid #ccc;
+                }
+
+                .daohang:hover .other {
+                    display: block;
+                    border-top-color: #fff;
+                }
+
+                .daohang:hover span {
+                    background: url(../images/icons.png) no-repeat -135px 5px;
+                }
+
+                .daohang:hover>a {
+                    color: #0CB95F;
+                }
+
+            }
+        }
+    }
+
+    .header-log {
+        width: 990px;
+        height: 120px;
+        margin: 0 auto;
+        position: relative;
+
+        img {
+            position: absolute;
+            width: 210px;
+            height: 70px;
+            top: 25px;
+        }
+
+        span {
+            position: absolute;
+            display: inline-block;
+            height: 55px;
+            left: 230px;
+            top: 33px;
+            border-left: 1px solid #ccc;
+            padding-left: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 55px;
+        }
+    }
+
+    .footer {
+        width: 100%;
+        height: 110px;
+        padding: 10px 0;
+
+        .container {
+            width: 990px;
+            height: 110px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 14px;
+            color: #999;
+
+            a {
+                font-size: 14px;
+                color: #999;
+            }
+        }
+    }
+}

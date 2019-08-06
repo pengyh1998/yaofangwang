@@ -278,6 +278,7 @@ li {
   float: right;
   padding: 10px 45px;
   box-sizing: border-box;
+  position: relative;
 }
 
 #log .login .container .cont .form-tab {
@@ -293,6 +294,7 @@ li {
   font-size: 20px;
   color: #99A5C2;
   margin-right: 1%;
+  cursor: pointer;
   float: left;
   text-align: center;
 }
@@ -315,6 +317,10 @@ li {
   width: 320px;
   height: 360px;
   margin-top: 10px;
+  position: absolute;
+  top: 60px;
+  left: 45px;
+  display: none;
 }
 
 #log .login .container .cont .form .item {
@@ -322,15 +328,24 @@ li {
   line-height: 50px;
 }
 
+#log .login .container .cont .form .item span {
+  color: #666;
+}
+
 #log .login .container .cont .form .item .r {
   float: right;
   font-size: 13px;
+}
+
+#log .login .container .cont .form .item .r a {
+  color: #0CB95F;
 }
 
 #log .login .container .cont .form .inp {
   width: 320px;
   height: 50px;
   margin-bottom: 5px;
+  position: relative;
 }
 
 #log .login .container .cont .form .inp .input_big {
@@ -345,6 +360,30 @@ li {
   line-height: 40px;
 }
 
+#log .login .container .cont .form .inp i {
+  background: url(../images/icons.png) no-repeat;
+  background-position: -350px -108px;
+}
+
+#log .login .container .cont .form .inp .user {
+  display: block;
+  width: 18px;
+  height: 25px;
+  position: absolute;
+  left: 10px;
+  top: 8px;
+}
+
+#log .login .container .cont .form .inp .pass {
+  display: block;
+  width: 18px;
+  height: 25px;
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  background-position: -370px -110px;
+}
+
 #log .login .container .cont .form .jizhu {
   height: 50px;
   font-size: 14px;
@@ -356,6 +395,11 @@ li {
 
 #log .login .container .cont .form .jizhu a {
   float: right;
+  color: #000;
+}
+
+#log .login .container .cont .form .jizhu a:hover {
+  color: #0CB95F;
 }
 
 #log .login .container .cont .form .dl {
@@ -366,6 +410,9 @@ li {
 }
 
 #log .login .container .cont .form .dl a {
+  display: block;
+  width: 100%;
+  height: 50px;
   color: #fff;
   text-decoration: none;
 }
@@ -375,4 +422,200 @@ li {
   line-height: 50px;
   font-size: 14px;
   margin-top: 10px;
+}
+
+#log .login .container .cont .form .other {
+  width: 320px;
+  height: 30px;
+}
+
+#log .login .container .cont .form .other a {
+  display: block;
+  float: left;
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  background: url(../images/icons.png) no-repeat -416px -142px;
+}
+
+#log .login .container .cont .form .other .weixin {
+  background-position-x: -447px;
+}
+
+#log .login .container .cont .form .other .alipay {
+  background-position: -416px -174px;
+}
+
+#log .login .container .cont .form .other .weibo {
+  background-position: -447px -174px;
+}
+
+#log .login .container .cont .kuaijie {
+  width: 320px;
+  height: 360px;
+  margin-top: 10px;
+  position: absolute;
+  top: 60px;
+  left: 45px;
+  background-color: #fff;
+  display: none;
+}
+
+#log .login .container .cont .kuaijie .item {
+  height: 50px;
+  line-height: 50px;
+}
+
+#log .login .container .cont .kuaijie .item span {
+  color: #666;
+}
+
+#log .login .container .cont .kuaijie .item .r {
+  float: right;
+  font-size: 13px;
+}
+
+#log .login .container .cont .kuaijie .item .r a {
+  color: #0CB95F;
+}
+
+#log .login .container .cont .kuaijie .inp {
+  width: 320px;
+  height: 50px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+#log .login .container .cont .kuaijie .inp .input_big {
+  display: block;
+  padding-left: 15px;
+  width: 320px;
+  height: 40px;
+  box-sizing: border-box;
+  color: #333;
+  font-size: 14px;
+  line-height: 40px;
+}
+
+#log .login .container .cont .kuaijie .yanzheng {
+  width: 320px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+#log .login .container .cont .kuaijie .yanzheng .input_big {
+  width: 230px;
+  height: 40px;
+  float: left;
+}
+
+#log .login .container .cont .kuaijie .yanzheng .pht {
+  width: 88px;
+  height: 38px;
+  border: 1px solid #999;
+  border-left: none;
+  float: left;
+}
+
+#log .login .container .cont .kuaijie .duanxin {
+  width: 320px;
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+#log .login .container .cont .kuaijie .duanxin input {
+  display: block;
+  padding-left: 15px;
+  width: 320px;
+  height: 40px;
+  box-sizing: border-box;
+  color: #333;
+  font-size: 14px;
+  line-height: 40px;
+}
+
+#log .login .container .cont .kuaijie .duanxin a {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  text-decoration: none;
+  color: #0CB95F;
+  font-size: 14px;
+}
+
+#log .login .container .cont .kuaijie .dl {
+  height: 50px;
+  background-color: #0CB95F;
+  text-align: center;
+  line-height: 50px;
+}
+
+#log .login .container .cont .kuaijie .dl a {
+  display: block;
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  text-decoration: none;
+}
+
+#log .login .container .cont .kuaijie .qita {
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+}
+
+#log .login .container .cont .kuaijie .other {
+  width: 320px;
+  height: 30px;
+}
+
+#log .login .container .cont .kuaijie .other a {
+  display: block;
+  float: left;
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  background: url(../images/icons.png) no-repeat -416px -142px;
+}
+
+#log .login .container .cont .kuaijie .other .weixin {
+  background-position-x: -447px;
+}
+
+#log .login .container .cont .kuaijie .other .alipay {
+  background-position: -416px -174px;
+}
+
+#log .login .container .cont .kuaijie .other .weibo {
+  background-position: -447px -174px;
+}
+
+#log .login .container .cont .active {
+  display: block;
+}
+
+#log .login .container .cont .form > span {
+  color: #EF0D15;
+}
+
+#log .footer {
+  width: 100%;
+  height: 110px;
+  padding: 10px 0;
+}
+
+#log .footer .container {
+  width: 990px;
+  height: 110px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+}
+
+#log .footer .container a {
+  font-size: 12px;
+  color: #999;
 }
