@@ -2,7 +2,6 @@
 # 先获取提交的参数
 $username = $_REQUEST["username"];
 $password = $_REQUEST["password"];
-echo $username;
 # 连接数据库并且到数据库中进行查询
 $db = mysqli_connect("127.0.0.1", "root", "", "yaofangwang");
  

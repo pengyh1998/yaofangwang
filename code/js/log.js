@@ -1,15 +1,15 @@
 $(function () {
     $(".form-tab").on("click", "div", function () {
         var index = $(this).index();
-        console.log(index, "---");
 
         $(".dldiv").eq(index).addClass("active").siblings(".dldiv").removeClass("active");
         $(".tab-item").eq(index).addClass("bor-btt").siblings(".tab-item").removeClass("bor-btt");
     });
-    $("#loginBtn").click(function () {
+    $("#denglu").click(function () {
 
         var username = $("#usernameID").val();
         var password = $("#password").val();
+        console.log(username, password);
 
         $.ajax({
             type: "post",
@@ -17,12 +17,16 @@ $(function () {
             dataType: "json",
             data: `username=${username}&password=${password}`,
             success: function (response) {
-                if (response.status == "success") {
+                console.log(response, "---");
+                if (response.status == "error") {
                     alert(response.msg);
-                    /* 跳转到登录页面 */
-                    window.location.href = ""
                 } else {
-                    alert(response.msg);
+                    if (response.status = "error") {
+                        alert(response.msg);
+
+                    } else {
+                        alert(response.msg);
+                    }
                 }
             }
         });
