@@ -140,17 +140,18 @@ li {
             height: 340px;
             border: 1px solid #dddddd;
             margin-right: 10px;
-
             margin-bottom: 20px;
             font-size: 14px;
             box-sizing: border-box;
             position: relative;
 
-            img {
-                display: block;
-                width: 190px;
-                height: 190px;
-                margin: 0 auto;
+            a {
+                img {
+                    display: block;
+                    width: 190px;
+                    height: 190px;
+                    margin: 0 auto;
+                }
             }
 
             .name {
@@ -237,4 +238,5 @@ li {
     li:hover .acount {
         background-color: #dddddd;
     }
+
 }

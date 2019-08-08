@@ -7,7 +7,9 @@ ul,
 li {
     list-style: none;
 }
-
+a{
+    text-decoration: none;
+}
 
 .head-top {
     height: 40px;
@@ -508,7 +510,60 @@ li {
 
     }
 }
+.nav {
+    width: 100%;
+    height: 50px;
+    background-color: #0CB95F;
 
+    .container {
+        width: 1190px;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+
+        .mainnav {
+            height: 50px;
+            display: flex;
+            line-height: 50px;
+
+
+            li {
+                height: 100%;
+                padding: 0 30px;
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+
+            .home {
+                padding: 0 50px;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            .category {
+                width: 210px;
+                height: 50px;
+                padding: 0;
+                padding-left: 20px;
+                background-color: #0AA454;
+
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    color: #fff;
+                }
+            }
+        }
+
+    }
+
+}
 .footer {
     width: 100%;
     height: 500px;

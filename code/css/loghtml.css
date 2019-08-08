@@ -279,6 +279,11 @@ li {
   margin-top: 20px;
 }
 
+.reg .zhuce .container > div .error {
+  display: inline-block;
+  color: #EF0D15;
+}
+
 .reg .zhuce .container > div span {
   display: inline-block;
   width: 170px;

@@ -16,7 +16,8 @@ if(mysqli_num_rows($result) == "0")
   $data["msg"] = "登录失败：该用户不存在";
 }else{
   /* 检查密码是否正确 */
-  if(mysqli_fetch_array($result)["password"] != $password)
+  $temp=mysqli_fetch_array($result);
+  if($temp["password"] != $password)
   {
     $data["status"] = "error";
     $data["msg"] = "登录失败：密码不正确！";

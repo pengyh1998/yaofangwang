@@ -17,15 +17,17 @@ $(function () {
             dataType: "json",
             data: `username=${username}&password=${password}`,
             success: function (response) {
-                console.log(response, "---");
+                console.log(response);
+
                 if (response.status == "error") {
                     alert(response.msg);
                 } else {
                     if (response.status = "error") {
                         alert(response.msg);
 
-                    } else {
+                    } else if (response.status = "success") {
                         alert(response.msg);
+                        //location.href = "../index.html";
                     }
                 }
             }

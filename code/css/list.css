@@ -142,7 +142,7 @@ li {
   position: relative;
 }
 
-#liebiao .goods li img {
+#liebiao .goods li a img {
   display: block;
   width: 190px;
   height: 190px;

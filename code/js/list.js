@@ -47,8 +47,8 @@ $(function () {
                 // [2] 根据数据渲染页面
                 var res = response.data.map(ele => {
                     return `
-                    <li>
-                <img src="${ele.src}" alt="">
+                    <li id=${ele.gid}><a href="http://127.0.0.1/yaofangwang/code/html/details.html?id=${ele.gid}">
+                <img src="${ele.src}" alt=""></a>
                 <p class="price">￥${ele.money}</p>
                  <a href="" class="name">${ele.name}</a>
                  <p class="guig">${ele.guige}</p>
@@ -56,7 +56,7 @@ $(function () {
                  <p class="pz">批准文号：</p>
                  <p class="acount">共<span>${ele.num}</span>个商家有售<a href="" class="sq">查看详情</a></p>
                  <div class="sc">${ele.shengchan}</div>
-             </li>
+                 </li>
                     `
                 }).join("");
                 $(".goods").html(res);
@@ -68,8 +68,6 @@ $(function () {
 
 
     //[1] 获取服务器存储商品数据
-
-
     //[2] 获取总页码
     $.ajax({
         type: "post",
@@ -97,4 +95,5 @@ $(function () {
         orderType = $(this).index();
         getList(0);
     })
+
 })

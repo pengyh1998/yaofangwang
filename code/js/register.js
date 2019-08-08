@@ -8,7 +8,7 @@ $(function () {
     let usernameText = "";
     /* 手机号码 */
     let phoneText = "";
-
+    let msgCodeText = "";
 
     let username = $("#usernameID");
     let phone = $("#phoneID");
@@ -103,15 +103,13 @@ $(function () {
         console.log(parent, text);
 
         if (text.length == 0) {
-            parent.css({
-                "color": "red",
-                "display": "inline-block",
-            });
+            parent.addClass("error");
             parent.html("用户名不能为空");
         } else if (!regUsername.test(text)) {
-            parent.css("color", "red");
+            parent.addClass("error");
             parent.html("用户名不符合规范！");
         } else {
+            parent.removeClass("error");
             parent.css("display", "none");
         }
     });
@@ -119,20 +117,21 @@ $(function () {
         let parent = $(this).siblings("p");
         parent.css("display", "inline-block");
     });
-    msgCode.blur(function (e) {
-        let text = $.trim($(this).val());
-        msgText = text;
-        let parent = $(this).siblings("p");
-        if (text.length == 0) {
-            parent.css("color", "red");
-            parent.html("短信验证码不能为空");
-        } else if (text != msgCodeText) {
-            parent.css("color", "red");
-            parent.html("短信验证码不正确");
-        } else {
-            parent.html("");
-        }
-    });
+    // msgCode.blur(function (e) {
+    //     let text = $.trim($(this).val());
+    //     msgText = text;
+    //     let parent = $(this).siblings("p");
+    //     if (text.length == 0) {
+    //         parent.addClass("error");
+    //         parent.html("短信验证码不能为空");
+    //     } else if (text != msgCodeText) {
+    //         parent.addClass("error");
+    //         parent.html("短信验证码不正确");
+    //     } else {
+    //         parent.removeClass("error");
+    //         parent.css("display", "none");
+    //     }
+    // });
     phone.focus(function (e) {
         let parent = $(this).siblings("p");
         parent.css("display", "inline-block");
@@ -144,13 +143,14 @@ $(function () {
         //let msg = $(this).nextAll(".form-group__message");
 
         if (text.length == 0) {
-            parent.css("color", "red");
+            parent.addClass("error");
             parent.html("手机号码不能为空");
         } else if (!regPhone.test(text)) {
-            parent.css("color", "red");
+            parent.addClass("error");
             parent.html("请输入正确的手机号码！");
         } else {
-            parent.html("");
+            parent.removeClass("error");
+            parent.css("display", "none");
         }
     });
     passwordA.focus(function (e) {
@@ -165,13 +165,14 @@ $(function () {
         console.log($(this)[0]);
 
         if (text.length == 0) {
-            parent.css("color", "red");
+            parent.addClass("error");
             parent.html("密码不能为空");
         } else if (!regPassword.test(text)) {
-            parent.css("color", "red");
+            parent.addClass("error");
             parent.html("您输入的密码不符合规范");
         } else {
-            parent.html("");
+            parent.removeClass("error");
+            parent.css("display", "none");
         }
     });
     passwordB.focus(function (e) {
@@ -186,13 +187,14 @@ $(function () {
         console.log($(this)[0]);
 
         if (text.length == 0) {
-            parent.css("color", "red");
+            parent.addClass("error");
             parent.html("密码不能为空");
         } else if (passwordAText != text) {
-            parent.css("color", "red");
+            parent.addClass("error");
             parent.html("您输入的密码不匹配");
         } else {
-            parent.html("");
+            parent.removeClass("error");
+            parent.css("display", "none");
         }
     });
 
@@ -218,12 +220,12 @@ $(function () {
             phoneText.length != 0 &&
             msgText.length != 0 &&
             passwordAText.length != 0 &&
-            passwordBText.length != 0
+            passwordBText.length != 0 && $(".error").length == 0
         ) {
 
             $.ajax({
                 type: "post",
-                url: "../server/register.php",
+                url: "http://127.0.0.1/yaofangwang/code/server/register.php",
                 dataType: "json",
                 data: `username=${usernameText}&password=${passwordAText}&phone=${phoneText}`,
                 // dataType: "dataType",
@@ -233,7 +235,7 @@ $(function () {
                     if (response.status == "success") {
                         alert(response.msg);
                         /* 跳转到登录页面 */
-                        window.location.href = "../html/log.html"
+                        location.href = "../html/log.html";
                     } else {
                         alert(response.msg);
                     }
