@@ -415,6 +415,7 @@ li {
   height: 50px;
   color: #fff;
   text-decoration: none;
+  cursor: pointer;
 }
 
 #log .login .container .cont .form .qita {

@@ -27,7 +27,7 @@ $(function () {
 
                     } else if (response.status = "success") {
                         alert(response.msg);
-                        //location.href = "../index.html";
+                        location.href = "../index.html";
                     }
                 }
             }
