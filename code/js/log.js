@@ -26,7 +26,7 @@ $(function () {
                         alert(response.msg);
 
                     } else if (response.status = "success") {
-                        alert(response.msg);
+                        //alert(response.msg);
                         location.href = "../index.html";
                     }
                 }

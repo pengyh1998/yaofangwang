@@ -8,7 +8,6 @@ $price = $_REQUEST["price"];
 $sql = "SELECT * FROM  cart WHERE goodid = '$goodid'";
 $result = mysqli_query($con,$sql);
 $row = mysqli_num_rows($result);
-
 if($row == 0)
 { 
    $insetSql = "INSERT INTO `cart` (`cartid`, `goodid`, `num`, `total`,`price`,`isActive`) 
