@@ -1,14 +1,16 @@
 // 当页面加载完后再执行Javascript代码
 window.onload = function () {
-
+    let oBox = $("#box");
+    let margin = 10;
     let gid = decodeURI(location.search).slice(1);
-    console.log(gid);
+    let gidd = gid.slice(gid.indexOf("=") + 1);
+    //console.log(gid);
     $.ajax({
         type: "post",
         url: "../server/details.php",
         data: gid,
         success: function (str) {
-            console.log(str);
+            //console.log(str);
             let data = JSON.parse(str);
             let html = data.map(ele => {
                 return `
@@ -121,7 +123,7 @@ window.onload = function () {
                 </dl>
                 <div class="mainop">
                     <a href="" class="ibtn2" id="buy">提交需求</a>
-                    <a href="" class="ibtn1" id="addcart">加入需求单</a>
+                    <a href="###" class="ibtn1" id="addcart">加入需求单</a>
                 </div>
                 <div class="cer-bot"></div>
             </div> 
@@ -131,6 +133,7 @@ window.onload = function () {
                 `;
 
             })
+
             $("#box").html(html);
 
             var oSmallBox = document.getElementById("small-box"),
@@ -150,7 +153,7 @@ window.onload = function () {
 
                     //修改中型图片和大型图片的src地址
                     oMiddleImg.src = "../images/details/midd" + this.src.slice(this.src.indexOf("-"));
-                    console.log(oMiddleImg.src);
+                    //console.log(oMiddleImg.src);
                     oLargeImg.src = "../images/details/big" + this.src.slice(this.src.indexOf("-"));
                 }
             }
@@ -173,7 +176,7 @@ window.onload = function () {
             //给middle-box添加鼠标移动事件
             oMiddleBox.onmousemove = function (e) {
                 //事件对象兼容
-                console.log(srcoll);
+                //console.log(srcoll);
 
                 var ev = e || window.event;
                 var iL = ev.clientX - (oBody.clientWidth - 1190) / 2 - oShadow.offsetWidth / 2;
@@ -217,8 +220,47 @@ window.onload = function () {
                 oLargeImg.style.top = -iLargeImgT + "px";
 
             }
+
+            /* 加入购物车的功能 */
+            $("#box").on("click", ".ibtn1", function () {
+                // console.log(itemData);
+                console.log(data);
+                var goodid = data.map((ele) => {
+                    return ele.gid;
+
+                }).join("")
+                var price = data.map((ele) => {
+                    return ele.money;
+
+                }).join("")
+
+                console.log(goodid, price);
+
+                $.ajax({
+                    type: "get",
+                    url: "../server/addCart.php",
+                    data: `goodid=${goodid}&price=${price}`,
+                    dataType: "json",
+                    success: function (response) {
+                        // console.log(response);
+                        var text = response["totalRow"];
+                        $("#catShow").html(text);
+                        //window.open("../html/shopingCart.html");
+
+                    }
+                });
+
+            })
+
+            /* 给购物车按钮添加点击事件 */
+            $("body").on("click", ".cart-list", function () {
+                window.open("../html/shopingCart.html")
+            })
         }
+
     });
+
+
 
 
 
