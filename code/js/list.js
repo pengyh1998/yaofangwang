@@ -1,40 +1,34 @@
-// $(function () {
-//     class ceartGoodsList {
-//         constructor(data) {
-//             this.data = data;
-//         }
-//         init() {
-//             $(".goods").append(this.creatHTMLList());
-//         }
-//         creatHTMLList() {
-//             let res = this.data.map((ele) => {
-//                 let html = `
-//                 <li>
-//                 <img src="${ele.src}" alt="">
-//                 <p class="price">￥${ele.money}</p>
-//                 <a href="" class="name">${ele.name}</a>
-//                 <p class="guig">${ele.guige}</p>
-//                 <p class="jix">${ele.jixing}</p>
-//                 <p class="pz">批准文号：</p>
-//                 <p class="acount">共<span>${ele.num}</span>个商家有售<a href="" class="sq">查看详情</a></p>
-//                 <div class="sc">${ele.shengchan}</div>
-//             </li>
-//         `; //<img src="${ele.pzwh}" alt=""></img>
-//                 return html;
-//             }).join("");
-//             return res;
-//         }
-//     }
-
-//     $.getJSON("../server/list.json", function (res) {
-//         let a = new ceartGoodsList(res);
-//         a.init();
-//     });
-
-// });
-
-
 $(function () {
+    window.onscroll = () => {
+        var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+        if (scrollTop >= 300) {
+            //当滚动到300px的时候，盒子显示，否则隐藏
+            $("#totop").css("display", "block")
+        } else {
+            $("#totop").css("display", "none")
+        }
+        $("#totop").click(function () {
+            var scrollTop = window.setInterval(function () {
+                console.log(window.pageYOffset + ':' + scrollTop);
+                var pop = window.pageYOffset;
+                if (pop > 0) {
+                    window.scrollTo(0, pop - 20);
+                } else {
+                    window.clearInterval(scrollTop);
+                }
+            }, 20);
+
+        })
+    }
+    $(".contact").slideDown().fadeOut().fadeIn().delay(3000).slideUp();
+    $(".i1").mouseover(function () {
+        $(".contact").css("display", "block");
+    })
+    $(".i1").mouseout(function () {
+        $(".contact").css("display", "none");
+    })
+
+
     let orderType = 0;
     let getList = (page) => {
         $.ajax({

@@ -12,25 +12,24 @@ $(function () {
         console.log(username, password);
 
         $.ajax({
-            type: "post",
+            type: "get",
             url: "../server/login.php",
             dataType: "json",
             data: `username=${username}&password=${password}`,
             success: function (response) {
                 console.log(response);
+                alert(response.msg);
+                let date = new Date();
+                date.setDate(date.getDate() + 7);
+                document.cookie = "name" + "=" + username + ";expires=" + date + ";path = /";
+                document.cookie = "password" + "=" + password + ";expires=" + date + ";path = /";
+                console.log(document.cookie);
+                window.location.href = "../index.html";
 
-                if (response.status == "error") {
-                    alert(response.msg);
-                } else {
-                    if (response.status = "error") {
-                        alert(response.msg);
-
-                    } else if (response.status = "success") {
-                        //alert(response.msg);
-                        location.href = "../index.html";
-                    }
-                }
             }
         });
+
+
+
     })
 });

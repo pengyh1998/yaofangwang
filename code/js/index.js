@@ -57,7 +57,8 @@ $(function () {
 
             this.loucengTab();
             this.Tab();
-
+            this.goTop();
+            this.login();
         }
         loucengTab() {
             $("#zxyp .snavs a").each((index, ele) => {
@@ -146,13 +147,95 @@ $(function () {
                 /* (2) 发送网络更新页面 */
             })
             $(".nav .container").mouseleave(function () {
-                console.log("ddd");
 
                 // var index = $(this).index();
                 /* (1) 设置当前标签的选中状态 */
                 $(".subcat").removeClass("active");
             })
 
+        }
+        goTop() {
+            window.onscroll = () => {
+                var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+                if (scrollTop >= 300) {
+                    //当滚动到300px的时候，盒子显示，否则隐藏
+                    $("#totop").css("display", "block")
+                } else {
+                    $("#totop").css("display", "none")
+                }
+                $("#totop").click(function () {
+                    var scrollTop = window.setInterval(function () {
+                        console.log(window.pageYOffset + ':' + scrollTop);
+                        var pop = window.pageYOffset;
+                        if (pop > 0) {
+                            window.scrollTo(0, pop - 20);
+                        } else {
+                            window.clearInterval(scrollTop);
+                        }
+                    }, 20);
+
+                })
+            }
+            $(".contact").slideDown().fadeOut().fadeIn().delay(3000).slideUp();
+            $(".i1").mouseover(function () {
+                $(".contact").css("display", "block");
+            })
+            $(".i1").mouseout(function () {
+                $(".contact").css("display", "none");
+            })
+        }
+        login() {
+            function getItem(key) {
+                var arr = document.cookie.split("; ");
+                for (let i = 0; i < arr.length; i++) {
+                    let arrTemp = arr[i].split("=");
+                    if (arrTemp[0] == key) {
+                        return arrTemp[1];
+                    }
+                }
+            }
+
+            function setItem(key, value, day) {
+                if (day) {
+                    let date = new Date();
+                    date.setDate(date.getDate() + day);
+                    document.cookie = key + "=" + value + ";expires=" + date + ";path=/";
+                    console.log(key + "=" + value + ";expires=" + date);
+
+                } else {
+                    document.cookie = key + "=" + value;
+                }
+            }
+
+            function getKeys() {
+
+                var arr = document.cookie.split("; ");
+                var keys = [];
+                for (let i = 0; i < arr.length; i++) {
+                    let arrTemp = arr[i].split("=");
+                    keys.push(arrTemp[0]);
+                }
+                return keys;
+            }
+
+            function clear() {
+                var keys = getKeys();
+                keys.forEach(element => {
+                    setItem(element, "", -1);
+                });
+            }
+            let name = getItem("name");
+            let c = "<a href='#'>欢迎您" + name + "</a> / <a href='#'>退出</a>";
+            $(".ul-right>li").eq(0).html(c);
+
+            //$(".ul-right>li>a").eq(1).attr("href").text("");
+            $(".ul-right>li>a").eq(1).click(() => {
+                clear();
+                console.log($(".ul-right>li>a").eq(1));
+
+                $(".ul-right>li").eq(0).html(`<a href = "./html/log.html">登录 </a>/ <a href = "html/register.html" > 免费注册 </a>`);
+
+            })
         }
     }
     (new YaoFangWang).sor();

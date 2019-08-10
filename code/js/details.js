@@ -1,5 +1,33 @@
 // 当页面加载完后再执行Javascript代码
 window.onload = function () {
+    window.onscroll = () => {
+        var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+        if (scrollTop >= 300) {
+            //当滚动到300px的时候，盒子显示，否则隐藏
+            $("#totop").css("display", "block")
+        } else {
+            $("#totop").css("display", "none")
+        }
+        $("#totop").click(function () {
+            var scrollTop = window.setInterval(function () {
+                console.log(window.pageYOffset + ':' + scrollTop);
+                var pop = window.pageYOffset;
+                if (pop > 0) {
+                    window.scrollTo(0, pop - 20);
+                } else {
+                    window.clearInterval(scrollTop);
+                }
+            }, 20);
+
+        })
+    }
+    $(".contact").slideDown().fadeOut().fadeIn().delay(3000).slideUp();
+    $(".i1").mouseover(function () {
+        $(".contact").css("display", "block");
+    })
+    $(".i1").mouseout(function () {
+        $(".contact").css("display", "none");
+    })
     let oBox = $("#box");
     let margin = 10;
     let gid = decodeURI(location.search).slice(1);
@@ -259,9 +287,4 @@ window.onload = function () {
         }
 
     });
-
-
-
-
-
 }

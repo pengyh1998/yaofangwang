@@ -1,4 +1,33 @@
 $(function () {
+
+    window.onscroll = () => {
+        var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+        if (scrollTop >= 300) {
+            //当滚动到300px的时候，盒子显示，否则隐藏
+            $("#totop").css("display", "block")
+        } else {
+            $("#totop").css("display", "none")
+        }
+        $("#totop").click(function () {
+            var scrollTop = window.setInterval(function () {
+                console.log(window.pageYOffset + ':' + scrollTop);
+                var pop = window.pageYOffset;
+                if (pop > 0) {
+                    window.scrollTo(0, pop - 20);
+                } else {
+                    window.clearInterval(scrollTop);
+                }
+            }, 20);
+
+        })
+    }
+    $(".contact").slideDown().fadeOut().fadeIn().delay(3000).slideUp();
+    $(".i1").mouseover(function () {
+        $(".contact").css("display", "block");
+    })
+    $(".i1").mouseout(function () {
+        $(".contact").css("display", "none");
+    })
     var targetData;
     /* 获取数据库中所有购物车相关的信息 */
     getCatInfo();
@@ -30,6 +59,7 @@ $(function () {
                 }).join("");
 
                 $("tbody").html(res);
+                // console.log(res);
 
                 // console.log(targetData);
                 computedTotalPrice();
@@ -40,7 +70,7 @@ $(function () {
 
     function computedTotalPrice() {
         var res = 0;
-        // console.log(targetData);
+        console.log(targetData);
 
         targetData.forEach(element => {
             if (element.isActive == 1) {
@@ -51,10 +81,11 @@ $(function () {
         $(".right .zj").html(res.toFixed(2));
 
     }
-    console.log($("#allSelector"));
 
     $("#allSelector").click(function () {
-        $("tbody").prop("checked", $(this).is(":checked"));
+        $(".gouxuan").prop("checked", $(this).is(":checked"));
+        console.log("---");
+
     })
 
     /* 给删除添加点击事件 */
@@ -71,7 +102,7 @@ $(function () {
     })
 
     $("tbody").on("click", ".btnA", function () {
-        let ggid = $(".del").parent().attr("data-index");
+        let ggid = $(this).parent().parent().attr("data-index");
         let num = $(this).siblings(".num").val();
         num = num - 1;
         if (num <= 0) {
@@ -103,18 +134,22 @@ $(function () {
             // $("tr").eq(i).children(".xj").text();
             let a = ($("tr").eq(i).children(".xj").text()).slice(1);
             res = res + a * 1;
-            $(".zj").html("￥" + res)
+            $(".zj").html("￥" + res.toFixed(2))
         }
 
     });
     $("tbody").on("click", ".btnB", function () {
-        let ggid = $(".del").parent().attr("data-index");
+        let ggid = $(this).parent().parent().attr("data-index");
+        console.log(ggid);
+
         let num = $(this).siblings(".num").val();
         num = num * 1 + 1;
         $(this).siblings(".num").val(num);
         let index = $(this).parent().parent().index();
         let total = num * targetData[index].price;
         total = total.toFixed(2);
+        console.log(total);
+
         $(this).parent().siblings(".xj").html("￥" + total);
         // let res = $(".zj").text();
         // res = res.slice(1);
@@ -135,11 +170,19 @@ $(function () {
             let a = ($("tr").eq(i).children(".xj").text()).slice(1);
 
             res = res + a * 1;
-            $(".zj").html("￥" + res)
+
+            $(".zj").html("￥" + res.toFixed(2))
         }
 
-    });
 
+    });
+    // $("#allSelector").click(function () {
+
+    //     console.log("---");
+    //     if ($(this).is(":checked") == false) {
+    //         $(".zj").html(0)
+    //     }
+    // })
 
 
 })
